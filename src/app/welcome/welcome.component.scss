@@ -1,0 +1,13 @@
+@import '../../scss/custom';
+// @import '~material-design-icons/iconfont/material-icons.css';
+// @import 'material-icons/iconfont/material-icons.scss';
+.welcome-container {
+  margin-top: 3rem;
+}
+
+.header-section {
+  &__title {
+    color: $blue;
+    text-align: center;
+  }
+}
