@@ -13,12 +13,23 @@
             rounded mx-auto d-block"
             >
 
-            <!-- <i class="material-icons">sports_basketball</i> -->
         </div>
         <div class="col-4">
           <h3>Get Started For Free</h3>
-          <button class="btn btn-primary">Sign Up</button>
-          <button class="btn">Login</button>
+          <tabset>
+            <tab heading="REGISTER" (selectTab)="goToLink('/register')" customClass="tabs">
+              <ng-template tabHeading>
+
+              </ng-template>
+              <!-- <app-register></app-register> -->
+            </tab>
+            <tab (selectTab)="goToLink('/login')" heading="LOGIN" customClass="tabs">
+              <ng-template>
+
+              </ng-template>
+              <!-- <app-login></app-login> -->
+            </tab>
+          </tabset>
         </div>
       </div>
     </section>
