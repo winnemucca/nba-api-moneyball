@@ -16,20 +16,16 @@
         </div>
         <div class="col-4">
           <h3>Get Started For Free</h3>
-          <tabset>
+          <button [routerLink]="['register']" class="btn btn-primary">Register</button>
+          <button [routerLink]="['login']" class="btn btn-success">Login</button>
+          <router-outlet></router-outlet>
+          <!-- <tabset>
             <tab heading="REGISTER" (selectTab)="goToLink('/register')" customClass="tabs">
-              <ng-template tabHeading>
 
-              </ng-template>
-              <!-- <app-register></app-register> -->
             </tab>
-            <tab (selectTab)="goToLink('/login')" heading="LOGIN" customClass="tabs">
-              <ng-template>
-
-              </ng-template>
-              <!-- <app-login></app-login> -->
+            <tab heading="LOGIN" customClass="tabs">
             </tab>
-          </tabset>
+          </tabset> -->
         </div>
       </div>
     </section>
