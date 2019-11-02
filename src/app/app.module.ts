@@ -25,6 +25,7 @@ import { RegisterComponent } from './register/register.component';
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
