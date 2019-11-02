@@ -35,7 +35,9 @@ const routes: Routes = [
     redirectTo: '/welcome',
     pathMatch: 'full'
   },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
+  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
+  { path: 'nbaPlayers', loadChildren: () => import('./nba-players/nba-players.module').then(m => m.NbaPlayersModule) }
 
 ];
 
