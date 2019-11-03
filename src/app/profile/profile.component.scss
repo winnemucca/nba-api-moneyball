@@ -1,0 +1,9 @@
+@import '../../scss/custom';
+
+.list-group {
+  .list-group-item {
+    background: $blue;
+    color: #fff;
+    text-align: center;
+  }
+}
