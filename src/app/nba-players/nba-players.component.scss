@@ -1,0 +1,94 @@
+@import '../../scss/custom';
+// TODO not mobile first or bem.  refactor when finished with view
+$primary-color: #00bcd4;
+$accent-color: #f50057;
+$text-color: #263238;
+$body-color: #80deea;
+$main-font: 'roboto';
+$font-bold: 700;
+$font-regular: 400;
+$sizing: 8rem;
+// * { box-sizing: border-box }
+
+.search-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+	justify-content: center;
+
+  &__header {
+    font-weight: $font-bold;
+  }
+}
+
+input,
+button {
+  background: none;
+	border: none;
+	outline: 0;
+}
+
+button {cursor: pointer};
+
+.searchBox-input::placeholder {/* No es un seudoelemento estandar */
+  color:$white;
+  opacity: .6;
+}
+
+/* Chrome, Opera ySafari */
+.searchBox-input::-webkit-input-placeholder {
+  color: $white;
+}
+/* Firefox 19+ */
+.searchBox-input::-moz-placeholder {
+  color: $white;
+}
+/* IE 11+ y Edge */
+.searchBox-input:-ms-input-placeholder {
+  color: $white;
+}
+/* Firefox 18- */
+#formGroupExampleInput:-moz-placeholder {
+  color: $white;
+}
+
+.searchBox {
+  background-color: $blue;
+	border-radius: $sizing;
+	display: flex;
+	height: $sizing;
+}
+.searchBox:hover .searchBox-input {
+  padding-left: 2rem;
+  padding-right: 1rem;
+  // width: 240px; ideal for smaller screens
+  width: 500px;
+}
+
+.searchBox-input {
+  color: $white;
+  font-size: 2rem;
+	transition: .45s;
+	width: 0;
+}
+
+.searchBox-button {
+  background-color: $green;
+  border-radius: 50%;
+  display: flex;
+  height: $sizing;
+  transition: .3s;
+  width: $sizing;
+}
+
+.searchBox-button:active  {
+  transform: scale(.85);
+}
+
+.searchBox-icon {
+  color: $white;
+  font-size: 2.5rem;
+  margin: auto;
+}
+
+

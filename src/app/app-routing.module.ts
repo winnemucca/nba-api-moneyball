@@ -39,7 +39,8 @@ const routes: Routes = [
     path: 'profile', loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule)
   },
   {
-    path: 'nbaPlayers', loadChildren: () => import('./nba-players/nba-players.module').then(mod => mod.NbaPlayersModule)
+    // goal is to eventually have multiple-leagues
+    path: 'nba-player-search', loadChildren: () => import('./nba-players/nba-players.module').then(mod => mod.NbaPlayersModule)
   },
   { path: '**', component: NotFoundComponent }
 

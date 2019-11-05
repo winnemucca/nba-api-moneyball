@@ -6,10 +6,12 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class NbaApiService {
+  // **TODO move url info to more secure place once api is working and back end is set up
   private NBA_API_URL = '';
   constructor(private http: HttpClient) { }
 
   getPlayerByFirstName(searchName: string) {
+
     const params = new HttpParams()
       .set('x-rapidapi-host', 'api-nba-v1.p.rapidapi.com')
       .set('x-rapidapi-key', 'fGxFj3yBZNmshuPbtIE6pJo1S6wip1a1InRjsn3nF4YwLRtXO5')
