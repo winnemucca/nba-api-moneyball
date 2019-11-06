@@ -56,7 +56,11 @@ button {cursor: pointer};
   background-color: $blue;
 	border-radius: $sizing;
 	display: flex;
-	height: $sizing;
+  height: $sizing;
+
+  &__form {
+    display: flex;
+  }
 }
 .searchBox:hover .searchBox-input {
   padding-left: 2rem;

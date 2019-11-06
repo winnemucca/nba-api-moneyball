@@ -8,7 +8,23 @@
   <div class="searchBox">
     <!-- TODO work on aria label hidden -->
     <!-- <label for="search">Search</label> -->
-    <input type="text" class="searchBox-input" placeholder="Search by last name" aria-label="Search">
+    <form [formGroup]="playerSearch" class="searchBox__form">
+      <input
+        formControlName="searchTerm"
+        type="text"
+        name="searchTerm"
+        class="searchBox-input"
+        placeholder="Search by last name"
+        [typeahead]="players"
+        [typeaheadItemTemplate]="searchResults"
+        aria-label="Search">
+    </form>
+
+
+    <ng-template #searchResults>
+      <h6>lets get something showing</h6>
+      <!-- <ngb-highlight></ngb-highlight> -->
+    </ng-template>
 
     <button class="searchBox-button">
       <i class="searchBox-icon  material-icons">search</i>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 @Injectable({
@@ -7,19 +7,18 @@ import { catchError } from 'rxjs/operators';
 })
 export class NbaApiService {
   // **TODO move url info to more secure place once api is working and back end is set up
-  private NBA_API_URL = '';
+  private NBA_API_URL = 'https://api-nba-v1.p.rapidapi.com/players/lastName';
   constructor(private http: HttpClient) { }
 
-  getPlayerByFirstName(searchName: string) {
-
-    const params = new HttpParams()
+  getPlayerByLastName(searchName) {
+    // const searchValue = Object.values(searchName);
+    const headers = new HttpHeaders()
       .set('x-rapidapi-host', 'api-nba-v1.p.rapidapi.com')
-      .set('x-rapidapi-key', 'fGxFj3yBZNmshuPbtIE6pJo1S6wip1a1InRjsn3nF4YwLRtXO5')
-      .set('lastname', searchName);
+      .set('x-rapidapi-key', 'fGxFj3yBZNmshuPbtIE6pJo1S6wip1a1InRjsn3nF4YwLRtXO5');
 
-    const options = {params};
+    // const options = {headers};
 
-    return this.http.get(`${this.NBA_API_URL}`, options).pipe(
+    return this.http.get(`${this.NBA_API_URL}/${searchName.searchTerm}`, {headers}).pipe(
       catchError(this.handleError)
     );
   }
