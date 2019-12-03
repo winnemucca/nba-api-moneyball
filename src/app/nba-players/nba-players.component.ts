@@ -27,8 +27,8 @@ export class NbaPlayersComponent implements OnInit {
       debounceTime(400),
       distinctUntilChanged(),
       mergeMap(term => this.nbaApi.getPlayerByLastName(term)),
-      tap(x => console.log(x.api.players))
-    ).subscribe(data => this.players = data.api.players);
+      tap(x => console.log(x))
+    ).subscribe(data => data);
   }
 
   private createForm(): void {

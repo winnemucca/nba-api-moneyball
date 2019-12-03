@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegisteringUser } from './userRegister.model';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit, OnDestroy {
 
   registerForm: FormGroup;
+  customerRegisterInfo: RegisteringUser;
 
   constructor(
     private fb: FormBuilder,
