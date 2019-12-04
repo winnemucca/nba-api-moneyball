@@ -1,22 +1,26 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
       <label for="firstName">First Name</label>
-      <input type="text" formControlName="firstName" class="form-control" />
+      <input
+        [ngClass]="{'is-invalid': (!registerForm.get('firstName').valid && registerForm?.get('firstName').touched) }"
+        type="text" formControlName="firstName" class="form-control" />
       <span class="invalid-feedback" *ngIf="registerForm?.get('firstName').touched && registerForm.get('firstName').hasError('required')">
         Please provide a first name!
       </span>
   </div>
   <div class="form-group">
       <label for="lastName">Last Name</label>
-      <!-- [ngClass]="{'isValid': !registerForm.get('lastName').valid && registerForm?.get('lastName').touched}" -->
       <input
+        [ngClass]="{'is-invalid': (!registerForm.get('lastName').valid && registerForm?.get('lastName').touched) }"
         type="text" formControlName="lastName" class="form-control"  />
       <span class="invalid-feedback" *ngIf="
       registerForm?.get('lastName').touched && registerForm.get('lastName').hasError('required')">Please provided a last name</span>
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" formControlName="email" class="form-control">
+    <input
+      [ngClass]="{'is-invalid': (!registerForm.get('email').valid && registerForm?.get('email').touched) }"
+      type="email" formControlName="email" class="form-control">
     <span class="invalid-feedback" class="invalid-feedback" *ngIf="registerForm?.get('email').touched && registerForm.get('email').hasError('required')">
       Please provide a valid email!
     </span>
