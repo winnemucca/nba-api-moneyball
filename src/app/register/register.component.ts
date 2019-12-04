@@ -1,7 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, EmailValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisteringUser } from './userRegister.model';
+
+function passwordMatcher(c: AbstractControl): {[key: string]: boolean} | null {
+  const emailControl = c.get('email');
+  const confirmControl = c.get('confirmEmail');
+
+  if (emailControl.value === confirmControl.value) {
+    return null;
+  }
+  // tslint:disable-next-line:object-literal-key-quotes
+  return {'match': true};
+}
 
 @Component({
   selector: 'app-register',
