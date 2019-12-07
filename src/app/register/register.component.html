@@ -19,10 +19,10 @@
   <div class="form-group">
     <label for="email">Email</label>
     <input
-      [ngClass]="{'is-invalid': (!registerForm.get('email').valid && registerForm?.get('email').touched) }"
+      [ngClass]="{'is-invalid': emailMessage }"
       type="email" formControlName="email" class="form-control">
-    <span class="invalid-feedback" class="invalid-feedback" *ngIf="registerForm?.get('email').touched && registerForm.get('email').hasError('required')">
-      Please provide a valid email!
+    <span class="invalid-feedback" class="invalid-feedback" >
+      {{emailMessage}}
     </span>
   </div>
   <div class="form-group">
